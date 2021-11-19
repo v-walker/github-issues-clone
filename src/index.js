@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import App from './App';
-import IssueDetail from './components/IssueDetail'
+import IssueDetail from './components/IssueDetail';
+import UserSearch from './components/UserSearch';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/issue/:issue_number" element={<IssueDetail />} />
+          <Route path="/user" element={<UserSearch />} />
           {/* All other routes here */}
         </Routes>
     </Router>
