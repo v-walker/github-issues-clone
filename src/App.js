@@ -10,7 +10,7 @@ function App() {
     const issueData = async () => {
       let response = await fetch("https://api.github.com/repos/facebook/create-react-app/issues");
       let data = await response.json();
-      setIssues(data)
+      setIssues(data);
     }
 
     issueData();
@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     console.log(issues);
-  }, [issues])
+  }, [issues]);
 
   
   return (
