@@ -1,10 +1,12 @@
 import React from 'react';
 import Issue from './Issue';
 
-function IssueList() {
+function IssueList(props) {
+    let issues = props.issues;
+    
     return (
         <>
-            
+            <Issue issues={issues} />
         </>
     )
 }

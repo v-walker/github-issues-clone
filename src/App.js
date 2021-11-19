@@ -24,7 +24,7 @@ function App() {
   
   return (
     <>
-      
+      <IssueList issues={issues} />
     </>
   );
 }
