@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 // eslint-disable-next-line no-unused-vars
 import Card, {Body, Title, Text} from 'react-bootstrap/Card';
 import '../issue.css';
@@ -10,10 +10,12 @@ import '../issue.css';
 function IssueDetail() {
     const {issue_number} = useParams();
     const [singleIssue, setIssue] = useState([]);
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
+    const [markdown, setMarkdown] = useState("")
 
-    const markdown = singleIssue.body;
+    // const markdown = singleIssue.body;
     // const navigate = useNavigate();
+    console.log(markdown);
 
     useEffect(() => {
         const issueData = async () => {
@@ -22,6 +24,7 @@ function IssueDetail() {
                 let data = await response.json();
                 setIssue(data);
                 setUser(data.user);
+                setMarkdown(data.body);
             } catch (err) {
                 console.log(err);
             }
@@ -38,7 +41,7 @@ function IssueDetail() {
     return (
         <div>
             <h2>{singleIssue.title} #{issue_number}</h2>
-            <div><a href={user.url}>{user.login}</a> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
+            <div><link to={user.url}>{user.login}</link> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
             <hr></hr>
 
             <img className="avatar" src={user.avatar_url} alt={`avatar for ${user.login}`} />
@@ -50,7 +53,7 @@ function IssueDetail() {
                 <span className="ms-2">commented at {singleIssue.created_at}</span>
                 <hr />
                 <Card.Text>
-                    <ReactMarkdown children={markdown} />
+                    <Markdown>{markdown}</Markdown>
                 </Card.Text>
             </Card.Body>
             </Card>
