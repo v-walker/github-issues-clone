@@ -41,7 +41,7 @@ function IssueDetail() {
     return (
         <div>
             <h2>{singleIssue.title} #{issue_number}</h2>
-            <div><link to={user.url}>{user.login}</link> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
+            <div><a href={user.url}>{user.login}</a> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
             <hr></hr>
 
             <img className="avatar" src={user.avatar_url} alt={`avatar for ${user.login}`} />
@@ -52,9 +52,9 @@ function IssueDetail() {
                 <Card.Link className="" href={user.url}>{user.login}</Card.Link>
                 <span className="ms-2">commented at {singleIssue.created_at}</span>
                 <hr />
-                <Card.Text>
+                {/* <Card.Text> */}
                     <Markdown>{markdown}</Markdown>
-                </Card.Text>
+                {/* </Card.Text> */}
             </Card.Body>
             </Card>
 
@@ -62,4 +62,4 @@ function IssueDetail() {
     )
 }
 
-export default IssueDetail
+export default IssueDetail;

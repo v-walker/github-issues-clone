@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Card, {Body, Title, Text} from "react-bootstrap";
 
-function UserCard() {
+function UserCard(props) {
     return (
-        <div>
-            
-        </div>
+        <Card>
+            <Card.Body>
+                {/* avatar, username, user details */}
+            </Card.Body>
+        </Card>
     )
 }
 

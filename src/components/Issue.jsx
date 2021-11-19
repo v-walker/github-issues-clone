@@ -21,4 +21,4 @@ function Issue(props) {
     )
 }
 
-export default Issue
+export default Issue;
