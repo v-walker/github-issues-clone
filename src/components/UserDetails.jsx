@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 
 function UserDetails() {
     const {username} = useParams;
+    // eslint-disable-next-line no-unused-vars
     const [userData, setUserData] = useState([]);
 
 
@@ -15,6 +16,7 @@ function UserDetails() {
         }
 
         getUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     

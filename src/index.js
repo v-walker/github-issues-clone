@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+// eslint-disable-next-line no-unused-vars
 import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import App from './App';
 import IssueDetail from './components/IssueDetail';
