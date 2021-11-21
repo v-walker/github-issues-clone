@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {Link} from 'react-router-dom';
 
 function Issue(props) {
-    let {title, issueNum, date, username, userLink, label} = props;
+    let {title, issueNum, date, username, label} = props;
 
     return (
         <Card>

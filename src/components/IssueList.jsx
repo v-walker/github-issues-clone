@@ -24,7 +24,7 @@ function IssueList(props) {
             
             return(
                 <div key={index}>
-                    <Issue title={issueObj.title} issueLink={issueObj.url} issueNum={issueObj.number} date={issueObj.created_at} username={issueObj.user.login} userLink={issueObj.user.url} label={label}  />
+                    <Issue title={issueObj.title} issueNum={issueObj.number} date={issueObj.created_at} username={issueObj.user.login} label={label}  />
                 </div>
             )
         })}
