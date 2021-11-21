@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import UserPanel from './UserPanel';
-// import Repo from './Repo';
+import Repo from './Repo';
 
 
 function Users() {
@@ -32,20 +32,43 @@ function Users() {
         console.log(user);
         console.log(repos);
     }, [user, repos])
-    
 
-//     Login Name
-// Display Name (if available)
-// Avatar
-// Bio
-// Company
-// Location
-// Website (aka blog)
+// Name
+// Link
+// Description (if any)
+// Primary Language
+// Stars Count
+// Watch Count
+// Fork Count
 
     return (
-        <div className="container-fluid row d-flex justify-content-center">
-            <UserPanel className="col-2" name={user.name} username={user.login} avatar={user.avatar_url} bio={user.bio} company={user.company} location={user.location} website={user.blog} followers={user.followers} following={user.following} />
-            {/* <Repo /> */}
+        <div className="container-fluid mt-5 row d-flex justify-content-center">
+            <div className="col-11 row d-flex justify-content-center">
+                <UserPanel className="col-3" name={user.name} username={user.login} avatar={user.avatar_url} bio={user.bio} company={user.company} location={user.location} website={user.blog} followers={user.followers} following={user.following} />
+                
+                <div className="col-9 row">
+                    <hr />
+                    {repos.map((repo, index) => {
+                        let langColor = "";
+                        if (repo.language === "JavaScript") {
+                            langColor = "#fcf003"
+                        } else if (repo.language === "HTML") {
+                            langColor = "#fc6203"
+                        } else if (repo.language === "EJS") {
+                            langColor = "#fc0349"
+                        } else if (repo.language === "Python") {
+                            langColor = "#2f7dcc"
+                        } else {
+                            langColor = "#222324"
+                        }
+
+                        return(
+                            <Repo key={index} name={repo.name} link={repo.git_url} description={repo.description} primaryLang={repo.language} langColor={langColor} starCount={repo.stargazers_count} watchCount = {repo.watchers_count} forkCount = {repo.forks_count} updatedDate = {repo.updated_at}/>
+                        )
+                    })}
+                </div>
+            </div>
+            
         </div>
     )
 }

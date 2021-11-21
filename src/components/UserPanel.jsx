@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 
@@ -8,7 +7,7 @@ function UserPanel(props) {
 
 
     return (
-        <Card className="mt-5" style={{ width: '18rem' }}>
+        <Card className="" style={{ width: '18rem' }}>
             <Card.Img variant="top" src={avatar} style={{ borderRadius: "50%"}}/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>

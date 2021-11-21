@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import App from './App';
 import IssueDetail from './components/IssueDetail';
 import UserSearch from './components/UserSearch';
+import Users from './components/Users';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.render(
           <Route path="/" element={<App />} />
           <Route path="/issue/:issue_number" element={<IssueDetail />} />
           <Route path="/user" element={<UserSearch />} />
+          <Route path="/users/:username" element={<Users />} />
           {/* All other routes here */}
         </Routes>
     </Router>
