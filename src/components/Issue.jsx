@@ -1,6 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
-import Card, {Body, Title, Text} from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card';
+import {Link} from 'react-router-dom';
 
 function Issue(props) {
     let {title, issueNum, date, username, userLink, label} = props;
@@ -8,12 +9,12 @@ function Issue(props) {
     return (
         <Card>
             <Card.Body>
-                <Card.Link className="h5" href={`/issue/${issueNum}`}>
+                <Link className="h5" to={`/issue/${issueNum}`}>
                     {title}
-                </Card.Link>
+                </Link>
                 <span className="ms-2">{label}</span>
                 <Card.Text>
-                    #{issueNum} opened {date} by <Card.Link href={userLink}>{username}</Card.Link>
+                    #{issueNum} opened {date} by <Link to={`/users/${username}`}>{username}</Link>
                 </Card.Text>
                 
             </Card.Body>

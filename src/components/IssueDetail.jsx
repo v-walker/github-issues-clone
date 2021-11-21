@@ -1,9 +1,8 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import Markdown from "react-markdown";
-// eslint-disable-next-line no-unused-vars
-import Card, {Body, Title, Text} from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card';
 import '../issue.css';
 
 
@@ -37,7 +36,7 @@ function IssueDetail() {
     return (
         <div>
             <h2>{singleIssue.title} #{issue_number}</h2>
-            <div><a href={user.url}>{user.login}</a> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
+            <div><Link to={`/users/${user.login}`}>{user.login}</Link> opened this issue at {singleIssue.created_at} • {singleIssue.comments} comments </div>
             <hr></hr>
 
             <img className="avatar" src={user.avatar_url} alt={`avatar for ${user.login}`} />
@@ -45,7 +44,7 @@ function IssueDetail() {
 
             <Card>
             <Card.Body>
-                <Card.Link className="" href={user.url}>{user.login}</Card.Link>
+                <Link to={`/users/${user.login}`}>{user.login}</Link>
                 <span className="ms-2">commented at {singleIssue.created_at}</span>
                 <hr />
                 {/* <Card.Text> */}

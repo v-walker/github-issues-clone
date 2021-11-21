@@ -48,7 +48,6 @@ function  UserSearch() {
                         username={userObj.login}
                         name={userObj.name}
                         location={userObj.location}
-                        profileLink={userObj.html_url} 
                         reposLink={userObj.repos_url}  />)
                     })}
                 </div>
