@@ -13,10 +13,6 @@ function IssueDetail() {
     const [user, setUser] = useState({});
     const [markdown, setMarkdown] = useState("")
 
-    // const markdown = singleIssue.body;
-    // const navigate = useNavigate();
-    console.log(markdown);
-
     useEffect(() => {
         const issueData = async () => {
             try {
